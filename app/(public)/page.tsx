@@ -30,7 +30,7 @@ export default function Page() {
         </TicketCard>
 
         <div className="mt-4 text-center text-xs text-outline">
-          © 2026 Senandung Alam. Crafted with vintage spirit.
+          © 2026 Senandung Alam. By TitikTemu Production.
         </div>
       </div>
     </main>
