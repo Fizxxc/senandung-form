@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+
+body { background: #F6F1E6; color: #3A241C; }
+
+.grain {
+  background-image: radial-gradient(circle at 1px 1px, rgba(58,36,28,0.07) 1px, transparent 0);
+  background-size: 12px 12px;
+}
+
+.vintage-border {
+  border: 2px solid #8C4B3A;
+  box-shadow: 0 12px 30px rgba(58,36,28,0.18);
+}
+
+.btn-vintage {
+  border: 2px solid #8C4B3A;
+  background: #D9BF9A;
+  color: #3A241C;
+  box-shadow: 0 6px 0 rgba(140,75,58,0.8);
+  transition: transform .08s ease, box-shadow .08s ease;
+}
+.btn-vintage:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 rgba(140,75,58,0.8);
+}
+
+.input-vintage {
+  border: 2px solid #8C4B3A;
+  background: rgba(246,241,230,0.7);
+}
+
+/* =========================
+   Ticket Stub (Perforated)
+========================= */
+
+.ticket {
+  position: relative;
+  border: 2px solid #8C4B3A;
+  border-radius: 1.25rem;
+  background: rgba(246,241,230,0.72);
+  box-shadow: 0 12px 30px rgba(58,36,28,0.18);
+  overflow: hidden;
+}
+
+.ticket::before,
+.ticket::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  border-radius: 9999px;
+  background: #F6F1E6; /* cream */
+  border: 2px solid #8C4B3A;
+  z-index: 2;
+}
+
+.ticket::before { left: -13px; }
+.ticket::after  { right: -13px; }
+
+/* Perforation dots on left and right */
+.ticket-perf {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.7;
+}
+
+.ticket-perf::before,
+.ticket-perf::after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  bottom: 14px;
+  width: 10px;
+  background-image: radial-gradient(circle, rgba(140,75,58,0.85) 1.6px, transparent 1.7px);
+  background-size: 10px 14px;
+  background-repeat: repeat-y;
+}
+
+.ticket-perf::before { left: 10px; }
+.ticket-perf::after  { right: 10px; }
+
+/* Tear line (dashed) */
+.ticket-tear {
+  border-top: 2px dashed rgba(140,75,58,0.7);
+  margin: 16px 0;
+}
+
+/* Subtle stamp background */
+.ticket-stamp {
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(176,106,60,0.22), transparent 60%);
+  transform: rotate(-18deg);
+}
+
+/* Barcode (CSS only) */
+.barcode {
+  height: 52px;
+  border: 2px solid rgba(140,75,58,0.75);
+  border-radius: 14px;
+  background:
+    linear-gradient(to right,
+      #3A241C 0 2px, transparent 2px 6px,
+      #3A241C 6px 7px, transparent 7px 12px,
+      #3A241C 12px 15px, transparent 15px 19px,
+      #3A241C 19px 20px, transparent 20px 25px,
+      #3A241C 25px 27px, transparent 27px 31px,
+      #3A241C 31px 34px, transparent 34px 39px,
+      #3A241C 39px 40px, transparent 40px 44px,
+      #3A241C 44px 48px, transparent 48px 52px,
+      #3A241C 52px 53px, transparent 53px 58px,
+      #3A241C 58px 62px, transparent 62px 66px
+    );
+  background-size: 66px 100%;
+  background-repeat: repeat-x;
+  background-color: rgba(217,191,154,0.25);
+}
+
+/* Tag badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 9999px;
+  border: 2px solid rgba(140,75,58,0.8);
+  background: rgba(217,191,154,0.35);
+  color: #3A241C;
+  font-size: 12px;
+}
